@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "DM Sans", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-mono: "DM Mono", monospace;
+
+  --color-paper: #f8f7f3;
+  --color-ink: #151515;
+  --color-muted: #66645f;
+  --color-line: #dcdad2;
+  --color-cloud: #efeee8;
+  --color-mist: #c9c7bd;
+  --color-cobalt: #3455db;
+  --color-moss: #275c4b;
+  --color-lemon: #e6ef72;
+  --color-coral: #ff6f5c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-lemon);
+  color: var(--color-ink);
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.25rem;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .link-underline::after {
+    transition: none;
+  }
+}

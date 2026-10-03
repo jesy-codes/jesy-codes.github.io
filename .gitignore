@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+*.log
+*.tsbuildinfo
+
+# Figma Make export used as the design reference; contains 12MB raw photos.
+/figma example/

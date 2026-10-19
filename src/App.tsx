@@ -400,14 +400,16 @@ export default function App() {
       <footer id="contact" className="bg-cobalt text-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
           <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-            Working on Applied AI? Want to discuss regulating AI and making it safer?
-          </h2>
+            Working on Applied AI? Want to discuss on how to make it safer and more equitable?          </h2>
           <p className="mt-10 max-w-3xl text-xl leading-relaxed sm:text-2xl">
             Hit me up at{" "}
             <Link href={`mailto:${EMAIL}`} className="border-b border-paper font-medium">
               {EMAIL}
             </Link>
             .
+          </p>
+          <p className="mt-16 max-w-3xl font-display text-3xl font-medium leading-snug text-lemon sm:text-4xl">
+            Let&apos;s make technology safer, impactful and more accountable.
           </p>
           <div className="mt-24 flex flex-col gap-5 border-t border-paper/20 pt-6 font-mono text-xs uppercase tracking-wider sm:flex-row sm:items-center sm:justify-between">
             <p>Jesica Ramirez Toscano · Applied Data Scientist</p>

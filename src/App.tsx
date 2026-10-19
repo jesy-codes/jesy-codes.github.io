@@ -1,10 +1,16 @@
 import type { ReactNode } from "react";
 import climbingPhoto from "./assets/jesy-climbing.jpg";
+import polarizationImg from "./assets/projects/polarization.png";
+import hohonuImg from "./assets/projects/hohonu.png";
+import covidImg from "./assets/projects/covid.png";
+import recidivismImg from "./assets/projects/recidivism.png";
+import mexcrimesImg from "./assets/projects/mexcrimes.png";
 
-const EMAIL = "jesica.ramtoscano@gmail.com";
+// Joined at runtime so the address never appears as plain text in the built files.
+const EMAIL = ["jesica.ramtoscano", "gmail.com"].join("@");
 const RESUME = "/Jesica_Ramirez_Toscano_Resume.pdf";
 const LINKEDIN = "https://www.linkedin.com/in/jesica-ramirez/";
-const GITHUB = "https://github.com/jramtos";
+const GITHUB = "https://github.com/jesy-codes";
 
 type LinkProps = {
   href: string;
@@ -48,129 +54,105 @@ function Mark() {
   );
 }
 
-const focusAreas = [
-  {
-    number: "01",
-    title: "Causal inference for policy",
-    body: "Difference-in-differences, regression discontinuity, synthetic control, and instrumental variables, used to separate what a decision caused from what merely correlated with it.",
-  },
-  {
-    number: "02",
-    title: "Evidence regulators can audit",
-    body: "Multi-scenario economic analyses and data investigations for government regulators, including the New York Attorney General, built to stand up to external scrutiny.",
-  },
-  {
-    number: "03",
-    title: "Privacy and safety systems",
-    body: "A privacy-first framework for regulatory data productions, and a classification model that flags notifiable incidents for Australian regulators.",
-  },
-  {
-    number: "04",
-    title: "Measurement and experimentation",
-    body: "Experiments and behavioral measurement for earner-quality initiatives, informing Product, Engineering, and Operations decisions at scale.",
-  },
-];
+type Project = {
+  name: string;
+  subtitle: string;
+  href: string;
+  cta: string;
+  image: string;
+  alt: string;
+  className: string;
+  description: ReactNode;
+};
 
-const projects = [
+const projects: Project[] = [
   {
-    number: "01",
-    name: "Predicting Polarization",
-    type: "NLP · Online discourse",
-    href: "https://github.com/advanced-ml-project/project/blob/main/documents/Predicting_Polarization.pdf",
-    description:
-      "Tested whether the language in news outlets' tweets can predict polarization in the comments they receive, using logistic regression, RNNs, and a PyTorch CNN.",
-    className: "bg-cobalt text-paper",
-    visual: (
-      <div className="absolute inset-x-8 bottom-0 top-16 overflow-hidden rounded-t-2xl bg-paper p-5 text-ink shadow-2xl sm:inset-x-14 sm:top-20">
-        <div className="flex items-center justify-between border-b border-line pb-4">
-          <div className="h-2.5 w-20 rounded-full bg-ink" />
-          <div className="flex gap-2">
-            <div className="size-2.5 rounded-full bg-mist" />
-            <div className="size-2.5 rounded-full bg-cobalt" />
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-3 pt-5">
-          <div className="col-span-2 rounded-xl bg-cloud p-4">
-            <div className="mb-5 h-2 w-16 rounded-full bg-cobalt" />
-            <div className="space-y-2">
-              <div className="h-2 rounded-full bg-line" />
-              <div className="h-2 w-3/4 rounded-full bg-line" />
-            </div>
-          </div>
-          <div className="rounded-xl bg-lemon p-3">
-            <div className="font-display text-3xl font-semibold">65%</div>
-            <div className="mt-6 h-2 w-10 rounded-full bg-ink/40" />
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    number: "02",
     name: "COVID-19 in Mexico",
-    type: "Machine learning · Public health",
-    href: "https://github.com/ml-project-2020/covid/blob/master/ML_paper.pdf",
-    description:
-      "Balanced and weighted random forests predicting severe disease outcomes from Mexican government health and socioeconomic data, to show how public-health datasets can inform policy.",
+    subtitle: "Predicting severe disease outcomes using health and socioeconomic variables",
+    href: "https://github.com/jesy-codes/covid-mex/blob/master/ML_paper.pdf",
+    cta: "Read the paper",
+    image: covidImg,
+    alt: "Choropleth map of Mexico showing relative hospitalization risk by state",
     className: "bg-moss text-paper",
-    visual: (
-      <div className="absolute inset-x-8 bottom-0 top-16 grid grid-cols-2 gap-3 rounded-t-2xl border-x border-t border-paper/20 p-5 sm:inset-x-14 sm:top-20">
-        <div className="rounded-xl bg-paper/10 p-4">
-          <div className="mb-4 font-mono text-xs uppercase tracking-wider text-paper/60">Model inputs</div>
-          <div className="h-2 w-3/4 rounded-full bg-paper/60" />
-          <div className="mt-2 h-2 w-1/2 rounded-full bg-paper/30" />
-        </div>
-        <div className="rounded-xl bg-paper p-4 text-ink">
-          <div className="mb-5 flex gap-2">
-            <div className="size-4 rounded-full bg-moss" />
-            <div className="size-4 rounded-full bg-lemon" />
-            <div className="size-4 rounded-full bg-coral" />
-          </div>
-          <div className="rounded-lg bg-ink px-3 py-2 font-mono text-xs text-paper">Risk / Prediction</div>
-        </div>
-      </div>
+    description: (
+      <>
+        Along with Roberto Barroso, Steph Ramos and Oscar Noriega, we studied and predicted severe disease outcomes for
+        COVID-19 patients in Mexico. The predictions were useful in developing a relative risk index between Mexican
+        states.
+      </>
     ),
   },
   {
-    number: "03",
-    name: "Mapping Crime in Mexico City",
-    type: "Public safety · Web application",
-    href: "https://github.com/jramtos/mexcrimes",
-    description:
-      "A web application serving crime-risk information by location and time of day, built on more than two million records from the city government's open-data API.",
+    name: "Predicting Polarization From News Outlets Tweets",
+    subtitle: "NLP and Neural Networks",
+    href: "https://github.com/advanced-ml-project/project/blob/main/documents/Predicting_Polarization.pdf",
+    cta: "Read the paper",
+    image: polarizationImg,
+    alt: "Table of tweets correctly predicted as high polarity, with word-level importance highlighted in red and green",
+    className: "bg-cobalt text-paper",
+    description: (
+      <>
+        With Kelsey Anderson and Stephanie Ramos, we built different supervised machine learning models to test if the
+        text extracted from tweets posted by news media accounts is predictive of the polarization in the comments they
+        receive. We used logistic regression, recurrent and convolutional neural networks to predict polarization in
+        comments with 65% accuracy. Our research aimed to contribute to creating a more civil and less polarized space
+        for discourse on social media.
+      </>
+    ),
+  },
+  {
+    name: "Chronic Crime Behavior",
+    subtitle: "Through the lens of mental health and other social dimensions",
+    href: "https://jramtos.github.io/dynamic_vis/",
+    cta: "Explore the visualization",
+    image: recidivismImg,
+    alt: "Heatmap of average arrests by age group and frequency of restlessness, from the BJS 2016 Inmates Survey",
     className: "bg-coral text-ink",
-    visual: (
-      <div className="absolute inset-x-8 bottom-0 top-16 overflow-hidden rounded-t-2xl bg-paper p-5 sm:inset-x-14 sm:top-20">
-        <div className="grid h-full grid-cols-6 grid-rows-4 gap-1.5">
-          {[0, 1, 0, 0, 2, 1, 1, 3, 2, 1, 0, 0, 0, 2, 3, 3, 2, 1, 1, 0, 1, 2, 1, 0].map((level, i) => (
-            <div
-              key={i}
-              className={
-                level === 3 ? "rounded bg-ink" : level === 2 ? "rounded bg-ink/55" : level === 1 ? "rounded bg-ink/20" : "rounded bg-cloud"
-              }
-            />
-          ))}
-        </div>
-      </div>
+    description: (
+      <>
+        To better understand mass incarceration and mental health in the U.S., I examined arrest histories across social
+        dimensions such as mental illness, emotional distress, and family conditions (e.g. foster care, homelessness),
+        using the Bureau of Justice Statistics&apos; 2016 Survey of Prison Inmates. I built an interactive, scroll-driven
+        visualization that tells the story: among inmates aged 35–44, for example, average arrests rise from 8.0 to
+        12.2 as restlessness goes from never to constant.
+      </>
     ),
   },
   {
-    number: "04",
-    name: "Hohonu Water Levels",
-    type: "Civic data · Time series",
-    href: "https://www.youtube.com/watch?v=Xzz5Nq3ZxFI",
-    description:
-      "A data pipeline to clean, calibrate, and predict coastal water levels for communities facing frequent flooding. Scraped 200+ URLs for standardized datums and tuned vector autoregression forecasts.",
+    name: "Mapping Crimes in Mexico City",
+    subtitle: "At a certain day and hour, using Django and SQLite",
+    href: "https://github.com/jramtos/mexcrimes",
+    cta: "View the code",
+    image: mexcrimesImg,
+    alt: "Web app screenshot: a map of Mexico City crimes per precinct, and a zoomed view with the user's address, police station, and reported crimes",
     className: "bg-lemon text-ink",
-    visual: (
-      <div className="absolute inset-x-8 bottom-0 top-16 flex items-end justify-center sm:inset-x-16 sm:top-20">
-        <div className="relative h-full w-full max-w-sm rounded-t-full border border-ink/20 bg-paper">
-          <div className="absolute inset-8 rounded-full border border-ink/15" />
-          <div className="absolute inset-16 rounded-full border border-ink/15" />
-          <div className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt" />
-          <div className="absolute left-1/2 top-1/2 h-px w-20 origin-left -rotate-45 bg-cobalt" />
-        </div>
-      </div>
+    description: (
+      <>
+        Motivated by the growing crime incidence in Mexico City (CDMX), this web-app aims to provide the user
+        information on the number of crimes that happened at a specified place, day of the week, and hour, with the
+        purpose of the user potentially taking certain precautions when going to a specified area given that time and
+        day of the week.
+      </>
+    ),
+  },
+  {
+    name: "Hohonu: Water Level Anomaly Detection and Prediction",
+    subtitle: "Civic Data & Technology Clinic",
+    href: "https://www.youtube.com/watch?v=Xzz5Nq3ZxFI",
+    cta: "Watch the presentation",
+    image: hohonuImg,
+    alt: "Two line charts of a tide series: a Butterworth-filtered series, and the raw series with high and low tides marked",
+    className: "bg-cobalt text-paper",
+    description: (
+      <>
+        With Charlie Sheils and MengChen Chung, we built a data pipeline to clean, calibrate and predict water level
+        data of coastal monitoring stations from{" "}
+        <Link href="https://www.hohonu.io" className="underline">
+          Hohonu
+        </Link>
+        , an early-stage venture that measures and predicts water levels to assist communities harmed by frequent
+        flooding through low-cost, solar-powered hardware.
+      </>
     ),
   },
 ];
@@ -230,9 +212,10 @@ export default function App() {
           <Mark />
         </Link>
         <div className="hidden items-center gap-8 font-mono text-xs uppercase tracking-wider sm:flex">
-          <Link href="#focus" className="link-underline">Focus</Link>
-          <Link href="#work" className="link-underline">Work</Link>
+          <Link href="#experience" className="link-underline">Experience</Link>
+          <Link href="#work" className="link-underline">Projects</Link>
           <Link href="#about" className="link-underline">About</Link>
+          <Link href="#mission" className="link-underline">Next</Link>
           <Link href="#contact" className="link-underline">Contact</Link>
         </div>
         <Link
@@ -249,7 +232,7 @@ export default function App() {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-moss opacity-60 motion-reduce:animate-none" />
             <span className="relative inline-flex size-2 rounded-full bg-moss" />
           </span>
-          Open to Applied AI roles, particularly in Safety, Policy and/or Social Impact
+          Open to Applied AI roles
         </div>
         <div className="grid items-center gap-12 lg:grid-cols-5">
           <h1 className="font-display text-5xl font-medium leading-none tracking-tight sm:text-7xl lg:col-span-3 lg:text-6xl xl:text-7xl">
@@ -271,8 +254,8 @@ export default function App() {
         <div className="mt-12 grid gap-8 border-t border-line pt-6 md:grid-cols-2">
           <p className="max-w-lg text-lg leading-relaxed text-muted">
             I&apos;ve worked alongside product teams, regulators, and policymakers, turning large-scale data into
-            applications to make better-informed decisions. My goal is to one day work full time building
-            safe and beneficial AI tools.
+            applications to make better-informed decisions. My goal is to build high-impact AI applications for public
+            benefit.
           </p>
           <div className="flex flex-wrap items-end gap-x-8 gap-y-4 md:justify-end">
             <Link href="#work" className="group flex items-center gap-3 font-medium">
@@ -284,20 +267,39 @@ export default function App() {
         </div>
       </section>
 
-      <section id="focus" className="border-y border-line bg-cloud">
+      <section id="experience" className="border-y border-line bg-cloud">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-cobalt">What I bring</p>
           <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-            Rigorous causal methods and useful ML applications, aimed at real-world consequences.
+            Experience as an economist and data scientist.
           </h2>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
-            {focusAreas.map((area) => (
-              <div key={area.number} className="bg-paper p-7 sm:p-10">
-                <p className="font-mono text-xs text-muted">{area.number}</p>
-                <h3 className="mt-10 font-display text-2xl font-medium tracking-tight sm:text-3xl">{area.title}</h3>
-                <p className="mt-4 leading-relaxed text-muted">{area.body}</p>
+
+          <div className="mt-14 border-b border-line">
+            {experience.map((item) => (
+              <div key={item.role} className="grid gap-3 border-t border-line py-8 sm:grid-cols-4 sm:items-start">
+                <p className="font-mono text-xs text-muted">{item.year}</p>
+                <div className="sm:col-span-2">
+                  <p className="text-lg font-medium">{item.role}</p>
+                  <p className="mt-3 max-w-xl leading-relaxed text-muted">{item.detail}</p>
+                </div>
+                <p className="text-muted sm:text-right">{item.company}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 grid gap-3 sm:grid-cols-4">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted">Education</p>
+            <div className="space-y-6 sm:col-span-3">
+              {education.map((item) => (
+                <div key={item.name} className="grid gap-1 sm:grid-cols-3">
+                  <p className="font-mono text-xs text-muted">{item.year}</p>
+                  <div className="sm:col-span-2">
+                    <p className="font-medium">{item.name}</p>
+                    <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -315,27 +317,34 @@ export default function App() {
           </div>
 
           <div className="space-y-6">
-            {projects.map((project) => (
-              <article key={project.name} className="group grid overflow-hidden rounded-3xl bg-paper text-ink lg:grid-cols-5">
-                <div className="flex flex-col justify-between p-7 sm:p-10 lg:col-span-2 lg:min-h-96">
-                  <div className="mb-14 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-muted lg:mb-0">
-                    <span>{project.number}</span>
-                    <span>{project.type}</span>
+            {projects.map((project, i) => {
+              const number = String(i + 1).padStart(2, "0");
+              return (
+                <article key={project.name} className="grid overflow-hidden rounded-3xl bg-paper text-ink lg:grid-cols-5">
+                  <div className="flex flex-col justify-between gap-12 p-7 sm:p-10 lg:col-span-2">
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted">{number}</p>
+                    <div>
+                      <h3 className="font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl">{project.name}</h3>
+                      <p className="mt-3 font-mono text-xs uppercase tracking-wider text-muted">{project.subtitle}</p>
+                      <p className="mt-5 leading-relaxed text-muted">{project.description}</p>
+                      <Link href={project.href} className="mt-7 inline-flex items-center gap-2 font-medium text-cobalt">
+                        {project.cta} <Arrow />
+                      </Link>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display text-4xl font-medium tracking-tight sm:text-5xl">{project.name}</h3>
-                    <p className="mt-4 max-w-sm leading-relaxed text-muted">{project.description}</p>
-                    <Link href={project.href} className="mt-7 inline-flex items-center gap-2 font-medium text-cobalt">
-                      Read the project <Arrow />
-                    </Link>
+                  <div className={`relative min-h-80 overflow-hidden sm:min-h-96 lg:col-span-3 ${project.className}`}>
+                    <div className="absolute inset-0 flex items-center justify-center px-6 pb-8 pt-14 sm:px-10">
+                      <img
+                        src={project.image}
+                        alt={project.alt}
+                        loading="lazy"
+                        className="max-h-full max-w-full rounded-xl bg-paper object-contain shadow-2xl"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className={`relative min-h-80 overflow-hidden sm:min-h-96 lg:col-span-3 ${project.className}`}>
-                  <div className="absolute left-6 top-5 font-mono text-xs uppercase tracking-widest opacity-60">Case study / {project.number}</div>
-                  {project.visual}
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -377,50 +386,29 @@ export default function App() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-cloud">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-          <div className="grid border-b border-line py-12 sm:grid-cols-3">
-            <div className="mb-8 font-mono text-xs uppercase tracking-widest text-muted sm:mb-0">Experience</div>
-            <div className="sm:col-span-2">
-              {experience.map((item) => (
-                <div key={item.role} className="grid gap-3 border-b border-line py-7 first:pt-0 last:border-0 last:pb-0 sm:grid-cols-4 sm:items-start">
-                  <p className="font-mono text-xs text-muted">{item.year}</p>
-                  <div className="sm:col-span-2">
-                    <p className="font-medium">{item.role}</p>
-                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{item.detail}</p>
-                  </div>
-                  <p className="text-muted sm:text-right">{item.company}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="grid py-12 sm:grid-cols-3">
-            <div className="mb-8 font-mono text-xs uppercase tracking-widest text-muted sm:mb-0">Education</div>
-            <div className="sm:col-span-2">
-              {education.map((item) => (
-                <div key={item.name} className="grid gap-3 border-b border-line py-7 first:pt-0 last:border-0 last:pb-0 sm:grid-cols-4 sm:items-start">
-                  <p className="font-mono text-xs text-muted">{item.year}</p>
-                  <div className="sm:col-span-3">
-                    <p className="font-medium">{item.name}</p>
-                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{item.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section id="mission" className="border-y border-line bg-cloud">
+        <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-16 lg:px-12">
+          <h2 className="mb-5 font-mono text-xs uppercase tracking-widest text-cobalt">Where I&apos;m heading</h2>
+          <p className="font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
+            I&apos;m focused on deploying AI systems for public benefit and social equity: practical, mission-driven
+            applications that bridge the gap between frontier research and real-world impact, such as accessible
+            financial tools for small businesses and educational systems for underfunded schools.
+          </p>
         </div>
       </section>
 
       <footer id="contact" className="bg-cobalt text-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-          <p className="font-mono text-xs uppercase tracking-widest text-paper/70">Working on something that matters?</p>
-          <h2 className="mt-7 max-w-4xl font-display text-5xl font-medium leading-none tracking-tight sm:text-7xl">
-            Let&apos;s make technology safer and more accountable.
+          <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
+            Working on Applied AI? Want to discuss regulating AI and making it safer?
           </h2>
-          <Link href={`mailto:${EMAIL}`} className="group mt-12 inline-flex items-center gap-4 border-b border-paper pb-2 text-xl font-medium sm:text-2xl">
-            {EMAIL}
-            <span className="transition-transform group-hover:translate-x-1"><Arrow /></span>
-          </Link>
+          <p className="mt-10 max-w-3xl text-xl leading-relaxed sm:text-2xl">
+            Hit me up at{" "}
+            <Link href={`mailto:${EMAIL}`} className="border-b border-paper font-medium">
+              {EMAIL}
+            </Link>
+            .
+          </p>
           <div className="mt-24 flex flex-col gap-5 border-t border-paper/20 pt-6 font-mono text-xs uppercase tracking-wider sm:flex-row sm:items-center sm:justify-between">
             <p>Jesica Ramirez Toscano · Applied Data Scientist</p>
             <div className="flex gap-6">

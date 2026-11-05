@@ -1,0 +1,9 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# Build output (the published PDF lives in public/)
+*.pdf

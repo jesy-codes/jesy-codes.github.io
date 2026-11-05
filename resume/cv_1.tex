@@ -1,0 +1,274 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% Original author: Trey Hunner (http://www.treyhunner.com/)
+% Modifications by: Jesy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[utf8]{inputenc}
+\usepackage[
+    left=0.6in,
+    top=0.45in,
+    right=0.6in,
+    bottom=0.45in
+]{geometry}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{CVBLUE}{rgb}{0.00,0.00,0.20}
+
+\hypersetup{
+    hidelinks
+}
+
+\newcommand{\tab}[1]{\hspace{.26\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Jesica Maria Ramirez Toscano}
+
+\address{\small
+    \href{mailto:jesica.ramtoscano@gmail.com}
+    {jesica.ramtoscano@gmail.com}
+    \\
+    \href{https://jesy-codes.github.io}{jesy-codes.github.io}
+    \\
+    \href{https://github.com/jesy-codes}{github.com/jesy-codes}
+    \\
+    \href{https://www.linkedin.com/in/jesica-ramirez/}{linkedin.com/in/jesica-ramirez}
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%    SUMMARY (no heading, like the reference résumé)
+%----------------------------------------------------------------------------------------
+
+{\small
+Applied Data Scientist with +7 years of experience in statistical data
+analysis, experimental design and machine learning for marketplace-quality and
+regulatory decisions. Focused on measuring whether products, policies, and AI
+systems work, especially in the public interest.
+\par}
+
+\medskip
+
+%----------------------------------------------------------------------------------------
+%    PROFESSIONAL EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Professional Experience}
+
+%--- Uber Technologies Inc. ---
+
+\begin{rSubsection}
+    {Uber Technologies Inc.}
+    {\textbf{\emph{September 2021 -- Present}}}
+    {}
+    {}
+
+    \item[] \textbf{Scientist II}
+    \hfill
+    \textit{Earner Progression Science}
+    \\
+    \textit{October 2024 -- Present}
+
+    \item \textbf{Causal measurement:} Built a causal estimation framework
+    (order-level fixed-effects regression) that quantifies the marketplace
+    cost of courier behavior and informs earner-quality policy.
+
+    \item \textbf{Experimentation:} Designed experiments and behavioral
+    measurement frameworks across Product, Engineering, and Operations;
+    contributed to a real-time feedback system generating \$36M in annual
+    cost savings.
+
+    \item \textbf{Multi-armed bandit:} Ran a bandit test across eight message
+    variants to nudge couriers; lenient messages improved behavior, while
+    punitive ones only drove churn.
+
+    \item \textbf{Headroom analysis:} Used uplift modeling to target fewer
+    earners, and analyzed changes to earner-quality metric thresholds to
+    improve marketplace outcomes.
+
+    \item[] \textbf{Applied Scientist II}
+    \hfill
+    \textit{Policy Research -- Legal Data \& Economics}
+    \\
+    \textit{September 2021 -- October 2024}
+
+    \item \textbf{ML and LLM classification for regulatory compliance:}
+    Replaced manual and keyword-search review of incidents for Australian
+    regulators (1\% precision, 50\% recall) with a logistic-regression text
+    classifier (17\% precision, 89\% recall; projected savings of AUD~500,000
+    per year), then with an LLM-based (Gemini API) classifier behind a
+    PII-redaction layer (24\% precision, 91\% recall). Nominated for the 2023
+    Reimagine Award.
+
+    \item \textbf{Evidence for regulators:} Developed multi-scenario economic
+    analyses for the New York Attorney General and statistical analyses for
+    regulators across jurisdictions, as externally auditable evidence.
+
+    \item \textbf{Self-serve tools for Legal:} Built a scenario simulator that
+    lets Legal directors estimate litigation exposure under different
+    assumptions, and a driver-activity dashboard that 10+ paralegals use to
+    self-serve a driver's history and activity over any period.
+
+    \item \textbf{Regulatory data productions:} Built a privacy framework for
+    datasets produced to regulators and external parties; modeled litigation
+    risk and financial exposure.
+
+\end{rSubsection}
+
+%--- Banco de México ---
+
+\begin{rSubsection}
+    {Banco de México (Central Bank)}
+    {\textbf{\emph{August 2017 -- August 2019}}}
+    {Economist}
+    {General Directorate of Economic Research}
+
+    \item Built an NLP policy-tone index across 80+ central-bank statements
+    (2008--2019) and derived inflation expectations and interest-rate
+    forecasts (1 month to 3 years) from swaps, bonds, and surveys, supporting
+    monetary policy decisions.
+
+\end{rSubsection}
+
+%--- Deep Dive ---
+
+\textbf{Deep Dive}
+\hfill
+\textbf{\emph{June 2020 -- August 2020}}
+\\
+\textit{Data Scientist:} helped build the company's NLP pipeline for
+large-scale text data.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%    EDUCATION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+\textbf{University of Chicago}
+\hfill
+\textit{September 2019 -- June 2021}
+\\
+\textit{Master of Science in Computational Analysis and Public Policy}
+\hfill
+\textit{With Honors}
+\\
+{\small Joint Degree by the Department of Computer Science and the Harris
+School of Public Policy. Coursework: Computer Science with Applications I \&
+II, Databases, Cloud Computing, Linear Algebra, Machine Learning, Advanced
+Machine Learning, Data Visualization, Advanced Statistics, Causal Inference}
+
+\textbf{Universidad de las Américas Puebla, Mexico}
+\hfill
+\textit{August 2012 -- June 2017}
+\\
+\textit{Bachelor's Degree in Economics}
+\hfill
+\textit{Magna Cum Laude}
+\\
+{\small First Place, Empirical Research Thesis Regional Competition in Puebla}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%    SKILLS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills}
+
+{\small
+\textbf{Programming Languages:} Python, SQL, R, C\#, JavaScript \\
+\textbf{Data and Dev Tools:} Presto, Spark, Docker \\
+\textbf{ML Tools:} PyTorch, scikit-learn, transformers, LLM APIs
+}
+
+\end{rSection}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%    PROJECTS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Projects}
+
+\textbf{\textit{Machine Learning}}
+\begin{itemize}
+    \setlength{\itemsep}{-0.4em}
+
+    \item \textbf{\href{https://github.com/jesy-codes/covid-mex}{COVID-19 in Mexico (health)}:}
+    {\small
+    Predicted severe outcomes (hospitalization, death) with balanced and
+    weighted random forests on government data, informing a relative risk
+    index across states. \textit{Python.}
+    }
+
+    \item \textbf{\href{https://github.com/advanced-ml-project/project}{Predicting Polarization from News Tweets}:}
+    {\small
+    CNN classifying polarization in comments on news-outlet tweets.
+    \textit{Python, PyTorch.}
+    }
+
+\end{itemize}
+
+\smallskip
+\textbf{\textit{Full-Stack Development}}
+\begin{itemize}
+    \setlength{\itemsep}{-0.4em}
+
+    \item \textbf{\href{https://www.tenislat.com}{TenisLAT}:}
+    {\small
+    Built a bilingual web app for amateur tennis leagues in Mexico City, with
+    a Glicko-2 rating engine.
+    \textit{TypeScript, Next.js, Prisma, PostgreSQL.}
+    }
+
+    \item \textbf{\href{https://github.com/jramtos/mexcrimes}{Mapping Crimes in Mexico City}:}
+    {\small
+    Crime-risk web app by location and time of day, from 2M+ city records
+    and Google Maps API. \textit{Python, Django, SQLite.}
+    }
+
+\end{itemize}
+
+\smallskip
+\textbf{\textit{Data Visualization}}
+\begin{itemize}
+    \setlength{\itemsep}{-0.4em}
+
+    \item \textbf{\href{https://jramtos.github.io/dynamic_vis/}{Chronic Crime Behavior}:}
+    {\small
+    Interactive, scroll-driven visualization of arrest histories across mental
+    health and social dimensions, using the BJS 2016 Survey of Prison Inmates.
+    \textit{JavaScript.}
+    }
+
+\end{itemize}
+
+\smallskip
+\textbf{\textit{Data Pipelines and Time Series}}
+\begin{itemize}
+    \setlength{\itemsep}{-0.4em}
+
+    \item \textbf{\href{https://www.youtube.com/watch?v=Xzz5Nq3ZxFI}{Hohonu Water-Level Monitoring}:}
+    {\small
+    Pipeline to clean, calibrate, and predict water levels; scraped 200+ URLs
+    for datums; improved VAR forecasts.
+    }
+
+\end{itemize}
+
+\end{rSection}
+
+\end{document}

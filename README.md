@@ -10,7 +10,7 @@ npm run build    # type-check + production build into dist/
 
 ## Editing content
 
-All copy lives in `src/App.tsx` (the arrays at the top: `projects`, `experience`, `education`). The résumé PDF is `public/Jesica_Ramirez_Toscano_Resume.pdf`; replace the file to update it.
+All copy lives in `src/App.tsx` (the arrays at the top: `projects`, `experience`, `education`). The résumé PDF is `public/Jesica_Ramirez_Toscano_Resume.pdf`, generated from `resume/resume.tex`. To update it: edit the `.tex`, run `cd resume && xelatex resume.tex` (twice), then copy `resume.pdf` over the public file.
 
 ## Deploying
 

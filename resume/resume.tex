@@ -1,0 +1,116 @@
+% Build: xelatex resume.tex  (then copy resume.pdf to ../public/Jesica_Ramirez_Toscano_Resume.pdf)
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.4in,bottom=0.3in,left=0.55in,right=0.55in]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\setmainfont{lmroman10}[Scale=1.0,Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\definecolor{muted}{gray}{0.35}
+\definecolor{rule}{gray}{0.55}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000
+\linespread{1.0}
+
+% Section headings: letterspaced caps + rule
+\titleformat{\section}{\large\bfseries\addfontfeatures{LetterSpace=8}}{}{0pt}{\MakeUppercase}[\vspace{-3pt}{\color{rule}\titlerule}]
+\titlespacing*{\section}{0pt}{7pt}{5pt}
+
+% Bullets
+\setlist[itemize]{leftmargin=1.4em,labelsep=0.6em,itemsep=1pt,topsep=3pt,parsep=0pt,label=\textbullet}
+
+% Role heading + date line (friend-style: italic letterspaced caps, small bold-italic dates)
+\newcommand{\role}[3]{%
+  \vspace{4pt}%
+  {\itshape\fontsize{10.5}{12}\selectfont\addfontfeatures{LetterSpace=6}\MakeUppercase{#1}}\par%
+  \vspace{1pt}{\bfseries\itshape\fontsize{7.5}{9}\selectfont\color{muted}#3\ifx&#2&\else\ \ \textperiodcentered\ \ #2\fi}\par%
+  \vspace{1pt}%
+}
+
+\begin{document}
+
+% ---------- Header ----------
+{\centering
+{\Large\bfseries\addfontfeatures{LetterSpace=10}\MakeUppercase{Jesica Maria Ramirez Toscano}}\par
+\vspace{3pt}
+{\footnotesize\itshape\color{muted}
+ \href{mailto:jesica.ramtoscano@gmail.com}{jesica.ramtoscano@gmail.com} | \href{https://jesy-codes.github.io}{jesy-codes.github.io} | \href{https://github.com/jesy-codes}{github.com/jesy-codes} | \href{https://linkedin.com/in/jesica-ramirez}{linkedin.com/in/jesica-ramirez}}\par
+\vspace{3pt}{\color{rule}\rule{\linewidth}{0.6pt}}\par}
+
+\vspace{8pt}
+\small
+Applied Data Scientist with \textbf{7+ years} of experience in \textbf{statistical data analysis}, \textbf{experimental design} and \textbf{machine learning} for marketplace-quality and regulatory decisions. Focused on measuring whether products, policies, and AI systems work, especially in the public interest.
+\normalsize
+
+% ---------- Experience ----------
+\section{Professional Experience}
+
+\role{Scientist II, Uber}{Earner Progression Science}{Oct 2024 -- Present}
+\begin{itemize}
+  \item \textbf{Designed experiments and behavioral measurement frameworks} across Product, Engineering, and Operations; contributed to a real-time feedback system generating \textbf{\$36M in annual cost savings}.
+  \item \textbf{Built a causal estimation framework} using order-level fixed-effects regression to quantify the marketplace cost of courier behavior, enabling economically grounded quality measurement and informing policy decisions on earner-quality metrics.
+  \item \textbf{Narrowed earner-quality interventions with uplift modeling,} identifying the smaller set of earners worth targeting, and analyzed earner-quality metric threshold changes to improve marketplace outcomes.
+  \item \textbf{Data lead for L4--L5 incidents in Earner Metrics:} supported incident response across the earner organization, helping engineers validate with data that live changes solve any user gaming.
+\end{itemize}
+
+\role{Applied Scientist II, Uber}{Policy Research -- Legal Data \& Economics}{Sep 2021 -- Oct 2024}
+\begin{itemize}
+  \item \textbf{ML and LLM classification for regulatory compliance:} replaced manual and keyword-search review of incidents for Australian regulators (1\% precision, 50\% recall) with a logistic-regression text classifier (17\% precision, 89\% recall; \textbf{projected savings of AUD 500,000 per year}), then with an LLM-based classifier behind a PII-redaction layer (24\% precision, 91\% recall). Nominated for the 2023 Reimagine Award.
+  \item \textbf{Evidence for regulators:} developed multi-scenario economic analyses to support regulatory engagement with the \textbf{New York Attorney General}, translating complex platform data into externally auditable evidence for a government proceeding.
+  \item \textbf{Built self-serve tools for Legal:} a scenario simulator that lets Legal directors estimate litigation exposure under different assumptions, and a driver-activity dashboard that \textbf{10+ paralegals} use to self-serve a driver's history and activity over any period.
+  \item \textbf{Regulatory data productions:} built a privacy framework for datasets produced to regulators and external parties; modeled litigation risk and financial exposure.
+\end{itemize}
+
+\role{Data Scientist, Deep Dive}{}{Jun 2020 -- Aug 2020}
+\begin{itemize}
+  \item Helped build the company's \textbf{NLP pipeline} for large-scale text data.
+\end{itemize}
+
+\role{Economist, Banco de M\'exico (Central Bank)}{General Directorate of Economic Research}{Aug 2017 -- Aug 2019}
+\begin{itemize}
+  \item \textbf{Built an NLP policy-tone index} across \textbf{80+ central-bank statements} (2008--2019) and derived inflation expectations and interest-rate forecasts (1 month to 3 years) from swaps, bonds, and surveys, supporting monetary policy decisions.
+\end{itemize}
+
+% ---------- Education ----------
+\section{Education}
+\small
+\textbf{University of Chicago} \hfill {\itshape Sep 2019 -- Jun 2021}\\
+{\itshape M.S. in Computational Analysis and Public Policy, With Honors}\\
+Joint degree by the Department of Computer Science and the Harris School of Public Policy. Coursework: Computer Science with Applications I \& II, Databases, Cloud Computing, Linear Algebra, Machine Learning, Advanced Machine Learning, Data Visualization, Advanced Statistics, Causal Inference.
+
+\vspace{4pt}
+\textbf{Universidad de las Am\'ericas Puebla, Mexico} \hfill {\itshape Aug 2012 -- Jun 2017}\\
+{\itshape B.A. in Economics, Magna Cum Laude}\\
+First Place, Empirical Research Thesis Regional Competition in Puebla
+
+% ---------- Skills ----------
+\section{Skills}
+\small
+\textbf{Programming Languages:} Python, SQL, R, C\#, JavaScript\\[1pt]
+\textbf{Data and Dev Tools:} Presto, Spark, Docker \quad\textbf{ML Tools:} PyTorch, scikit-learn, transformers
+
+% ---------- Projects (page 2) ----------
+\newpage
+\normalsize
+\section{Projects}
+
+\definecolor{linkblue}{RGB}{26,76,160}
+% Visible link: blue + underlined
+\newcommand{\plink}[2]{\href{#1}{\textcolor{linkblue}{\underline{#2}}}}
+\setlist[itemize]{itemsep=5pt,topsep=6pt}
+
+\begin{itemize}
+  \item \textbf{Classification and Prediction:} \plink{https://github.com/jesy-codes/covid-mex/blob/master/ML_paper.pdf}{\textbf{COVID-19 in Mexico}}: predicting severe disease outcomes. Used balanced and weighted Random Forest models to predict individual deaths and hospitalizations from government data.
+  \item \textbf{Neural Networks and Social Polarization:} \plink{https://github.com/advanced-ml-project/project/blob/main/documents/Predicting_Polarization.pdf}{\textbf{Predicting Polarization from News Outlets Tweets}}. Built a convolutional neural network using PyTorch and trained the model to learn the social polarization of the comments given a tweet posted by a news media outlet. This research aims to contribute to creating a more civil and less polarized space for discourse on social media.
+  \item \textbf{Full Web Stack Development:} \plink{https://tenislat.vercel.app}{\textbf{TenisLAT}}: built a bilingual (Spanish/English), mobile-first web app for level-based amateur tennis leagues in Mexico City and La Paz. Players self-assess a level, enroll in a season, report match scores, and climb a per-level ranking driven by a Glicko-2 rating engine. Built with TypeScript, Next.js, Prisma, and PostgreSQL.
+  \item \textbf{Databases and App Management:} \plink{https://github.com/jramtos/mexcrimes}{\textbf{Mapping Crimes at a Certain Day and Hour in Mexico City}}. Built a web app to provide information on the average number of crimes that happened at a specified place in Mexico City using Google's API and \textbf{2M+ observations} from the City Government's API.
+  \item \textbf{Web Scraping and Time-Series Prediction:} \plink{https://www.youtube.com/watch?v=Xzz5Nq3ZxFI}{\textbf{Hohonu: Water Level Monitoring}}. Given the lack of quality and standardized water level data, collaborated on the pipeline that cleans, calibrates, and predicts local water level data. Scraped data from \textbf{200+ URLs} to obtain the standard measures (datums) needed for calibration, and optimized the previous VAR model predictions with additional external data.
+\end{itemize}
+
+\end{document}

@@ -200,10 +200,6 @@ const education = [
   },
 ];
 
-const stats = [
-  ["~7", "Years in applied data & policy"],
-];
-
 export default function App() {
   return (
     <main className="min-h-screen overflow-hidden bg-paper text-ink">
@@ -214,8 +210,6 @@ export default function App() {
         <div className="hidden items-center gap-8 font-mono text-xs uppercase tracking-wider sm:flex">
           <Link href="#experience" className="link-underline">Experience</Link>
           <Link href="#work" className="link-underline">Projects</Link>
-          <Link href="#about" className="link-underline">About</Link>
-          <Link href="#mission" className="link-underline">Next</Link>
           <Link href="#contact" className="link-underline">Contact</Link>
         </div>
         <Link
@@ -237,8 +231,8 @@ export default function App() {
         <div className="grid items-center gap-12 lg:grid-cols-5">
           <h1 className="font-display text-5xl font-medium leading-none tracking-tight sm:text-7xl lg:col-span-3 lg:text-6xl xl:text-7xl">
             Hello there! I&apos;m <span className="whitespace-nowrap">Jesy—</span>
-            <span className="font-serif italic text-cobalt">Mexicana, climber, runner,</span>
-            {" "}soon-to-be-polyglot, and applied data scientist.
+            <span className="font-serif italic text-cobalt">Mexicana, climber, runner</span>
+            {" "}and applied data scientist.
           </h1>
           <figure className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl bg-cloud lg:col-span-2 lg:max-w-none">
             <img
@@ -253,16 +247,15 @@ export default function App() {
         </div>
         <div className="mt-12 grid gap-8 border-t border-line pt-6 md:grid-cols-2">
           <p className="max-w-lg text-lg leading-relaxed text-muted">
-            I&apos;ve worked alongside product teams, regulators, and policymakers, turning large-scale data into
-            applications to make better-informed decisions. My goal is to build high-impact AI applications for public
-            benefit.
+            I&apos;ve worked alongside product teams, regulators, and policymakers, using experiments, causal inference,
+            and machine learning to measure whether products, policies, and AI systems work, especially in the public
+            interest.
           </p>
-          <div className="flex flex-wrap items-end gap-x-8 gap-y-4 md:justify-end">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 md:justify-end">
             <Link href="#work" className="group flex items-center gap-3 font-medium">
               See the work
               <span className="grid size-10 place-items-center rounded-full bg-ink text-paper transition-transform group-hover:translate-x-1"><Arrow /></span>
             </Link>
-            <Link href={RESUME} className="link-underline pb-1 font-medium">Download résumé</Link>
           </div>
         </div>
       </section>
@@ -349,67 +342,17 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto grid max-w-7xl gap-16 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:px-12">
-        <div>
-          <p className="mb-6 font-mono text-xs uppercase tracking-widest text-cobalt">A little about me</p>
-          <h2 className="font-display text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-            From economic policy to responsible, real-world AI.
-          </h2>
-        </div>
-        <div className="flex flex-col justify-between gap-14">
-          <div className="space-y-5 text-lg leading-relaxed text-muted">
-            <p>
-              My path began in economic research at Banco de México, where I did international market analysis and
-              derived inflation expectations from surveys, to understand the perception of the economy and inform
-              monetary policy decisions.
-            </p>
-            <p>
-              After working briefly on an NLP project analyzing the sentiment of governors in their policy minutes, I
-              realized I needed to learn more. So I left for the University of Chicago to study machine learning,
-              causal inference methods, and their applications in public policy.
-            </p>
-            <p>
-              After UChicago, I started in Legal Data &amp; Economics, building evidence for regulators and ML-based
-              systems to automate our compliance requirements. Today, as a scientist on Earner Progression, I use
-              causal frameworks, uplift modeling, and experiments to understand and improve the products that help
-              earners progress on the platform.
-            </p>
-          </div>
-          <div className="grid grid-cols-3 gap-4 border-t border-line pt-6">
-            {stats.map(([value, label]) => (
-              <div key={label}>
-                <div className="font-display text-3xl font-semibold sm:text-4xl">{value}</div>
-                <p className="mt-1 text-sm text-muted">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="mission" className="border-y border-line bg-cloud">
-        <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-16 lg:px-12">
-          <h2 className="mb-5 font-mono text-xs uppercase tracking-widest text-cobalt">Where I&apos;m heading</h2>
-          <p className="font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
-            I&apos;m focused on deploying AI systems for public benefit and social equity: practical, mission-driven
-            applications that bridge the gap between frontier research and real-world impact, such as accessible
-            financial tools for small businesses and educational systems for underfunded schools.
-          </p>
-        </div>
-      </section>
-
       <footer id="contact" className="bg-cobalt text-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
           <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-            Working on Applied AI? Want to discuss on how to make it safer and more equitable?          </h2>
+            Working on Applied AI? Have a project or role in mind? Let&apos;s talk :)
+          </h2>
           <p className="mt-10 max-w-3xl text-xl leading-relaxed sm:text-2xl">
             Hit me up at{" "}
             <Link href={`mailto:${EMAIL}`} className="border-b border-paper font-medium">
               {EMAIL}
             </Link>
             .
-          </p>
-          <p className="mt-16 max-w-3xl font-display text-3xl font-medium leading-snug text-lemon sm:text-4xl">
-            Let&apos;s make technology safer, impactful and more accountable.
           </p>
           <div className="mt-24 flex flex-col gap-5 border-t border-paper/20 pt-6 font-mono text-xs uppercase tracking-wider sm:flex-row sm:items-center sm:justify-between">
             <p>Jesica Ramirez Toscano · Applied Data Scientist</p>
@@ -418,7 +361,6 @@ export default function App() {
               <Link href={GITHUB} className="link-underline">GitHub</Link>
               <Link href={RESUME} className="link-underline">Résumé</Link>
             </div>
-            <p>Economics × Data × Policy</p>
           </div>
         </div>
       </footer>
